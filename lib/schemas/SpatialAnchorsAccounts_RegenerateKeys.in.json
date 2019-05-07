@@ -1,0 +1,57 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 90,
+            "pattern": "^[-\\w\\._\\(\\)]+$"
+        },
+        "spatialAnchorsAccountName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 90,
+            "pattern": "^[-\\w\\._\\(\\)]+$"
+        },
+        "requestBody": {
+            "description": "Spatial Anchors Account Regenerate Key",
+            "properties": {
+                "serial": {
+                    "default": 1,
+                    "description": "serial of key to be regenerated",
+                    "enum": [
+                        1,
+                        2
+                    ],
+                    "type": "integer",
+                    "x-ms-enum": {
+                        "name": "Serial",
+                        "values": [
+                            {
+                                "description": "The Primary Key",
+                                "name": "Primary",
+                                "value": 1
+                            },
+                            {
+                                "description": "The Secondary Key",
+                                "name": "Secondary",
+                                "value": 2
+                            }
+                        ]
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

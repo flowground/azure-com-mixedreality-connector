@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "location": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 90,
+            "pattern": "^[-\\w\\._\\(\\)]+$"
+        },
+        "requestBody": {
+            "description": "Check Name Availability Request",
+            "properties": {
+                "name": {
+                    "description": "Resource Name To Verify",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Fully qualified resource type which includes provider namespace",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
